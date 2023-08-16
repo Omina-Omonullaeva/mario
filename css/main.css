@@ -1,0 +1,76 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #2E8A57;
+}
+
+.box1 {
+    height: 260px;
+    background-color: #87CEEA;
+    content: "";
+}
+
+.box1::before {
+    display: block;
+    width: 300px;
+    height: 200px;
+    background-image: url(../images/cloud.png);
+    background-repeat: no-repeat;
+    content: "";
+}
+
+.box2-link {
+    display: inline-block;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-weight: bold;
+    background-color: #9ACD32;
+    padding: 15px 100px;
+    margin-top: 140px;
+    margin-bottom: 10px;
+    transition-property: background-color color;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+}
+
+.box2-link:active {
+    background-color: gray;
+    color: black;
+}
+
+.box3 {
+    position: relative;
+    height: 191px;
+    background-color: #696969;
+    border-top: 15px solid #808080;
+    border-bottom: 15px solid #808080;
+}
+
+.box3::before {
+    display: block;
+    width: 130px;
+    height: 150px;
+    background-image: url(../images/mario.png);
+    background-repeat: no-repeat;
+    content: "";
+    transition: transform 2s ease;
+}
+
+.box3::after {
+    display: block;
+    position: absolute;
+    bottom: 80px;
+    width: 1340px;
+    height: 0px;
+    border: 5px dashed white;
+    background-repeat: no-repeat;
+    content: "";
+    transition: transform 5s ease;
+}
+
+.box2-link:active + .box3::before {
+    transform: translateX(1220px);
+}
